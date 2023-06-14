@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+
+public class Multiples {
+    /**
+     * This function takes a range of numbers and returns an ArrayList of all the multiples of 2, 3 and 7 within that range.
+     *
+     * @param start (int): The starting number of the range
+     * @param end (int): The ending number of the range
+     * @return ArrayList<Integer>: An ArrayList of all the multiples of 2, 3 and 7 within the range
+     */
+    public static ArrayList<Integer> findMultiples(int start, int end) {
+        ArrayList<Integer> multiples = new ArrayList<Integer>();
+        for (int i = start; i <= end; i++) {
+            if (i % 2 == 0 || i % 3 == 0 || i % 7 == 0) {
+                multiples.add(i);
+            }
+        }
+        return multiples;
+    }
+
+    public static void main(String[] args) {
+        int start = 71;
+        int end = 150;
+        ArrayList<Integer> multiples = findMultiples(start, end);
+        System.out.println("Multiples of 2, 3 and 7 between " + start + " and " + end + ":");
+        for (int i = 0; i < multiples.size(); i++) {
+            System.out.print(multiples.get(i) + " ");
+        }
